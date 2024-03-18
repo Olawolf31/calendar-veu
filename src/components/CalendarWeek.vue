@@ -1,6 +1,6 @@
 <template>
-    <div id="calendar-entry">
-          <CalendarDay v-for="day in sharedState.seedData" :key="day.id" :days="day" class="tile is-child"/>
+    <div class="calendar-week">
+        <CalendarDay v-for="day in sharedState.seedData" :key="day.id" :days="day" />
         </div>
   </template>
 <script>
@@ -21,6 +21,9 @@ export default {
     }
 }
 </script>
-<style lang="">
-    
+<style scoped>
+    .calendar-week {
+  display: flex;
+  flex-wrap: wrap;
+}
 </style>
