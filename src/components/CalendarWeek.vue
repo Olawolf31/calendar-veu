@@ -1,6 +1,6 @@
 <template>
     <div id='calendar-entry'>
-        <div class="tile">
+        <div class="tile is-ancestor">
                 <CalendarDay v-for="day in sharedState.seedData" :key="day.id" :day="day"/>
             </div>
     </div>
