@@ -12,5 +12,71 @@ export const seedData = [
             },
         ],
         active: true
+    },
+    {
+        id: 2,
+        abbvTitle: 'Tue',
+        fullTitle: 'Tuesday',
+        events: [
+            {
+                details: 'Cook Rice', edit: false
+            },
+        ],
+        active: true
+    },
+    {
+        id: 3,
+        abbvTitle: 'Wed',
+        fullTitle: 'Wednesday',
+        events: [
+            {
+                details: 'Go to the Gym', edit: false
+            },
+        ],
+        active: true
+    },
+    {
+        id: 4,
+        abbvTitle: 'Thurs',
+        fullTitle: 'Thursday',
+        events: [
+            {
+                details: 'Go to the Gym', edit: false
+            },
+        ],
+        active: true
+    },
+    {
+        id: 5,
+        abbvTitle: 'Fri',
+        fullTitle: 'Friday',
+        events: [
+            {
+                details: 'Go to the Gym', edit: false
+            },
+        ],
+        active: true
+    },
+    {
+        id: 6,
+        abbvTitle: 'Sat',
+        fullTitle: 'Saturday',
+        events: [
+            {
+                details: 'Go to the Gym', edit: false
+            },
+        ],
+        active: true
+    },
+    {
+        id: 7,
+        abbvTitle: 'Sun',
+        fullTitle: 'Sunday',
+        events: [
+            {
+                details: 'Go to the Gym', edit: false
+            },
+        ],
+        active: true
     }
 ]
