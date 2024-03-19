@@ -2,7 +2,7 @@
       <div class="calendar-day">
         <div class="card">
           <div class="card-content">
-            <button class="button is-info is-small">{{ days.abbvTitle }}</button>
+            <button class="button is-info is-small" :style="getEventBackgroundColor">{{ days.abbvTitle }}</button>
             <div><button class="button is-text">{{ days.id }}</button></div>
             <p class="title">
               <CalendarEvent v-for="event in days.events" :key="event.id" :event="event"/>
@@ -20,6 +20,13 @@ import CalendarEvent from './CalendarEvent.vue';
         props: ['days'],
         components: {
             CalendarEvent
+        },
+        computed: {
+          getEventBackgroundColor() {
+            const colors = ["#ff00bf", '#85D6FF', '#99FF99', '#6b6969']
+            let randomColor = colors[Math.floor(Math.random() * colors.length)]
+            return `background-color: ${randomColor}`;
+          }
         }
     }
 </script>
