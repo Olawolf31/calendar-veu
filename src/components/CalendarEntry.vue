@@ -3,7 +3,7 @@
     <div class="card card-form">
       <div class="card-content">
         <div class="content">
-          <input type="text" />
+          <input type="text" v-model="input"/>
           <button>Submit</button>
         </div>
       </div>
@@ -14,6 +14,11 @@
 <script>
 export default {
   name: "CalendarEntry",
+  data() {
+    return {
+        input: "hello"
+    }
+  }
 };
 </script>
 <style scoped>
