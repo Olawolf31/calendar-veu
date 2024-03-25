@@ -4,7 +4,8 @@
       <div class="card-content">
         <div class="content">
           <input type="text" v-model="input"/>
-          <button>Submit</button>
+          <p>Day of Event: {{titleOfActiveDay}}</p>
+          <button @click="submitEvent(input)">Submit</button>
         </div>
       </div>
     </div>
@@ -12,11 +13,23 @@
 </template>
 
 <script>
+import { store } from '../store';
 export default {
   name: "CalendarEntry",
+  computed: {
+  titleOfActiveDay() {
+    //console.log(store.getActiveDay());
+    return store.getActiveDay().fullTitle;
+  }
+},
   data() {
     return {
         input: "hello"
+    }
+  },
+  methods: {
+    submitEvent(event) {
+      return store.addNewEvent(event)
     }
   }
 };
