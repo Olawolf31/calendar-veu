@@ -30,9 +30,28 @@ export const store = reactive({
      dayObj.events.splice(eventIndexToRemove, 1)
     },
     editEvent(id, eventDetails) {
+        this.editEventOnce()
         const dayObj = this.state.seedData.find(day => day.id === id)
         const eventIndexToEdit = dayObj.events.find(event => event.details === eventDetails)
-        console.log(eventIndexToEdit)
-        eventIndexToEdit.edit = true
+        //console.log(eventIndexToEdit)
+        if(eventIndexToEdit) {
+            eventIndexToEdit.edit = true
+        } else {
+            eventIndexToEdit.edit = false
+        }
+    },
+    editEventOnce() {
+        this.state.seedData.map((dayObj) => dayObj.events.map((singleEvent) => singleEvent.edit = false))
+    },
+    updateEvent(id, oldEvent, newEventDetails) {
+        //find day object
+        const dayObj = this.state.seedData.find(day => day.id === id);
+        //find specific event
+        const eventIndexToUpdate = dayObj.events.find(event => event.details === oldEvent)
+        //set event details to new Details
+        if(eventIndexToUpdate) {
+            eventIndexToUpdate.details = newEventDetails
+            eventIndexToUpdate.edit = false
+        }
     }
 });
